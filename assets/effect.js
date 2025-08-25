@@ -3,7 +3,7 @@ $(window).load(function () {
     $('.container').fadeIn('fast');
 });
 $('document').ready(function () {
-    var vw;
+    let vw;
     $(window).resize(function () {
         vw = $(window).width() / 2;
         $('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
@@ -33,7 +33,7 @@ $('document').ready(function () {
             });
     });
     $('#play').click(function () {
-        var audio = $('.song')[0];
+        const audio = $('.song')[0];
         audio.play();
         $('#bulb_yellow').addClass('bulb-glow-yellow-after');
         $('#bulb_red').addClass('bulb-glow-red-after');
@@ -41,8 +41,7 @@ $('document').ready(function () {
         $('#bulb_green').addClass('bulb-glow-green-after');
         $('#bulb_pink').addClass('bulb-glow-pink-after');
         $('#bulb_orange').addClass('bulb-glow-orange-after');
-        $('body').css('backgroud-color', '#FFF');
-        $('body').addClass('peach-after');
+        $('body').css('backgroud-color', '#FFF').addClass('peach-after');
         $(this)
             .fadeOut('slow')
             .delay(6000)
@@ -64,8 +63,8 @@ $('document').ready(function () {
     });
 
     function loopOne() {
-        var randleft = 1000 * Math.random();
-        var randtop = 500 * Math.random();
+        const randleft = 1000 * Math.random();
+        const randtop = 500 * Math.random();
         $('#b1').animate(
             { left: randleft, bottom: randtop },
             10000,
@@ -75,8 +74,8 @@ $('document').ready(function () {
         );
     }
     function loopTwo() {
-        var randleft = 1000 * Math.random();
-        var randtop = 500 * Math.random();
+        const randleft = 1000 * Math.random();
+        const randtop = 500 * Math.random();
         $('#b2').animate(
             { left: randleft, bottom: randtop },
             10000,
@@ -86,8 +85,8 @@ $('document').ready(function () {
         );
     }
     function loopThree() {
-        var randleft = 1000 * Math.random();
-        var randtop = 500 * Math.random();
+        const randleft = 1000 * Math.random();
+        const randtop = 500 * Math.random();
         $('#b3').animate(
             { left: randleft, bottom: randtop },
             10000,
@@ -97,8 +96,8 @@ $('document').ready(function () {
         );
     }
     function loopFour() {
-        var randleft = 1000 * Math.random();
-        var randtop = 500 * Math.random();
+        const randleft = 1000 * Math.random();
+        const randtop = 500 * Math.random();
         $('#b4').animate(
             { left: randleft, bottom: randtop },
             10000,
@@ -108,8 +107,8 @@ $('document').ready(function () {
         );
     }
     function loopFive() {
-        var randleft = 1000 * Math.random();
-        var randtop = 500 * Math.random();
+        const randleft = 1000 * Math.random();
+        const randtop = 500 * Math.random();
         $('#b5').animate(
             { left: randleft, bottom: randtop },
             10000,
@@ -120,8 +119,8 @@ $('document').ready(function () {
     }
 
     function loopSix() {
-        var randleft = 1000 * Math.random();
-        var randtop = 500 * Math.random();
+        const randleft = 1000 * Math.random();
+        const randtop = 500 * Math.random();
         $('#b6').animate(
             { left: randleft, bottom: randtop },
             10000,
@@ -131,8 +130,8 @@ $('document').ready(function () {
         );
     }
     function loopSeven() {
-        var randleft = 1000 * Math.random();
-        var randtop = 500 * Math.random();
+        const randleft = 1000 * Math.random();
+        const randtop = 500 * Math.random();
         $('#b7').animate(
             { left: randleft, bottom: randtop },
             10000,
@@ -239,13 +238,14 @@ $('document').ready(function () {
                     $('p:nth-child(' + i + ')')
                         .fadeIn('slow')
                         .delay(1000);
-                    if (i == 50) {
+                    if (i === 50) {
                         $('p:nth-child(49)')
                             .fadeOut('slow')
                             .promise()
                             .done(function () {
                                 $('.cake').fadeIn('fast');
-																$('.love_text').css('display', 'block');
+								$('.love_text')
+                                    .css('display', 'block');
                             });
                     } else {
                         msgLoop(i);
